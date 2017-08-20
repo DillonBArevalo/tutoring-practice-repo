@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+<% if logged_in? %>
+<form action="/logout" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Logout">
+</form>
+<% else %>
+<a href="/login">Login</a>
+<a href="/users/new">Register</a>
+<% end %>
+    <!--
+    _method is special in sinatra, it tells sinatra that the value of this input is the method for the route you should hit.
+    Whenever you want to hit a non get or post route, you have to do a hidden
+  -->
+  <%= yield %>
+</body>
+</html>

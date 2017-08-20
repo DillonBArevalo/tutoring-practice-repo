@@ -1,0 +1,11 @@
+<h1> Craigslist <%= @category.title %> Articles </h1>
+
+<ul>
+<% @articles.each do |article| %>
+  <!-- we had to interpolate the category id from the articles index -->
+  <!-- category.id is coming from the category we're iterating over -->
+  <li> <a href="/categories/<%= @category.id %>/articles/<%= article.id %>"><%= article.name %></a></li>
+<% end %>
+</ul>
+
+<a href="/categories/<%= @category.id %>/articles/new">New Article</a>

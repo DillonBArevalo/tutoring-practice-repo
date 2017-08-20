@@ -1,0 +1,18 @@
+<h1> Create New Article in <%= @category.title %></h1>
+  <%= erb :'_errors' %>
+  <!-- form action is going to be the route in the post -->
+<form action='/categories/<%= @category.id %>/articles' method='post'>
+<input type='text' name='article[name]' value='<%= @article.name %>' placeholder='Name'>
+<input type='text' name='article[price]' value='<%= @article.price %>' placeholder='price'>
+<input type='text' name='article[description]' value= '<%= @article.description %>' placeholder="description">
+
+<input type='hidden' name='article[category_id]' value= '<%= @category.id %>'>
+
+<input type='hidden' name='article[user_id]' value= '<%= session[:id] %>'>
+<!-- 9 and 11, an article NOW can belong to a user and a category!  -->
+<!-- set articles category id to the categories primary key -->
+<!-- we need to that because the foreign key in the article class (category_id) needs to reference the category -->
+
+
+<input type='submit' value='create article!'>
+</form>
