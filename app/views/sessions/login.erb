@@ -1,9 +1,9 @@
 <h1> Login! </h1>
   <%= erb :'_errors' %>
  <form action='/login' method='post'>
- <input type='text' name='username' value='<%= @user.username %>'>
- <input type='password' name='password'>
- <input type='submit' value='login'> 
+ <input type='text' name='username' value='<%= @user.username %>' placeholder='username'>
+ <input type='password' name='password' placeholder="password">
+ <input type='submit' value='login'>
  </form>
 
  <!-- type is how the field will show up -->
