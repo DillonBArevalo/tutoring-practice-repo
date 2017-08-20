@@ -1,0 +1,15 @@
+<h1><%= @article.name %></h1>
+<p>Price: <%= @article.price %></p>
+<p>Description: <%= @article.description %></p>
+
+<% if @article.user == current_user %>
+  <a href="/categories/<%= @category.id %>/articles/<%= @article.id %>/edit">Edit</a> | 
+
+  <!-- below we did not do a delete link, we had to do a form, because delete needs a form (pay attention to the hidden and _method) -->
+  <form action="/categories/<%= @category.id %>/articles/<%= @article.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>
+<% else %>
+  <!-- IMPLEMENT MESSAGES TO USER -->
+<% end %>

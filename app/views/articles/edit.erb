@@ -1,0 +1,10 @@
+<h1>Edit the article <%= @article.name %></h1>
+
+<form action='/categories/<%= @category.id %>/articles/<%= @article.id %>' method='post'>
+<input type="hidden" name="_method" value="put">
+<input type='text' name='article[name]' value='<%= @article.name %>' placeholder='Name'>
+<input type='text' name='article[price]' value='<%= @article.price %>' placeholder='price'>
+<input type='text' name='article[description]' value= '<%= @article.description %>' placeholder="description">
+
+<input type='submit' value='Edit article!'>
+</form>
