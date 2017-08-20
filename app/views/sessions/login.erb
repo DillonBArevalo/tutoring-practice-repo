@@ -1,0 +1,12 @@
+<h1> Login! </h1>
+  <%= erb :'_errors' %>
+ <form action='/login' method='post'>
+ <input type='text' name='username' value='<%= @user.username %>'>
+ <input type='password' name='password'>
+ <input type='submit' value='login'> 
+ </form>
+
+ <!-- type is how the field will show up -->
+ <!-- name is what the key will be in params when you submit it -->
+ <!-- value prefills the users username if they return to the screen with errors -->
+ <!-- why do we use brackets? brackets are notation for a hash -->
